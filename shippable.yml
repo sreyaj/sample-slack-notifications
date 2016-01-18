@@ -27,3 +27,11 @@ after_success:
   - git remote -v | grep ^heroku || heroku git:remote --app $APP_NAME
   - git push -f heroku $BRANCH:master
   - heroku run rake db:migrate
+notifications:
+  email:
+    recipients:
+      - sreyaj10@gmail.com
+      - sreya@shippable.com
+ on_success: change
+ on_failure: always
+ 
