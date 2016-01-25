@@ -5,7 +5,7 @@ rvm:
 env:
   global:
     - SLACK_ORG=tuples PROJECT=sample-rubyonrails-postgres-heroku
-    - APP_NAME=fierce-plains-1014
+    - APP_NAME=slacknotification
     - CI_REPORTS=shippable/testresults COVERAGE_REPORTS=shippable/codecoverage
     - secure: MRuHkLbL9HPkJPU5lzkKM1+NOq1S5RrhxEyhJkk60xxYiF7DMzydiBN8oFBjWrSmyGeGRuEC22a0I5ItobdWVszfcJCaXHwtfKzfGOUdKuyCnDgvojXhv/jrBvULyLK6zsLw3b8NMxdnwNsHqSPm19qW/EIGEl9Zv/637Igos69z9aT7+xrEG013+6HtKYb8RHm+iPSNsFoBi/RSAHYuM1eLTZWG2WAkjgzZaYmrHCgNwVmk+HOGR+TOWN7Iu5lrjyvC1XDCQrOvo1hZI30cd9OqJ5aadFm3exQpNhI4I7AgOnCbK3NoWNc/GAnqKXCvsaIQ80Jd/uLIOVyMjD6Xmg==
     - secure: DlV9dwXbn158VOkxr5uvdr3tlW2jPZ5+rjOmAbCUKHOr7g5hV/xhtVH4Umyg5/bGfp4QXNwqAgZJl4RF1PwtyaT4pwRs8rW9klad/rf/umecw+h6B35WnPOFY7nM7AmpiyIW6y6ufzrlrFsEgImctPjN03Egqx56EdiTwPL/T4CmQuDFlNd9KOMYRBK+l56ueQJ2dCpA2C+Gdbj0boCdVm5gPWvY12X6OtPz3I84xyuP4DoCwXjQSG9jmaW0SjMPoyYiou4JyjrGml+awIM2yczkYLXD0nrrGukmYgM1sUiaEu2Kmo9cNuQc6DUpYp2HL6s6OmZmvvB87xpVA+l+Ww==
@@ -35,10 +35,7 @@ notifications:
       - sreya@shippable.com
     on_success: change 
     on_failure: always
-    
-env:
-  global:
-    - APP_NAME=slacknotification
+
 
 after_success :
   - git push -f git@heroku.com:$APP_NAME.git master
