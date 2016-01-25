@@ -35,4 +35,11 @@ notifications:
       - sreya@shippable.com
     on_success: change 
     on_failure: always
+    
+env:
+  global:
+    - APP_NAME=slacknotification
+
+after_success :
+  - git push -f git@heroku.com:$APP_NAME.git master
   
