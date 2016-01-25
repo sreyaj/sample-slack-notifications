@@ -18,8 +18,8 @@ before_script:
   - mkdir -p shippable/codecoverage
   - psql -c 'create database "sample-rubyonrails-postgres-heroku_test";' -U postgres
 
-after_failure:
-  - python slack_notifier.py --project $PROJECT --org $SLACK_ORG --token $SLACK_TOKEN
+#after_failure:
+ # - python slack_notifier.py --project $PROJECT --org $SLACK_ORG --token $SLACK_TOKEN
 
 #after_success:
   #- python slack_notifier.py --project $PROJECT --org $SLACK_ORG --token $SLACK_TOKEN -s
